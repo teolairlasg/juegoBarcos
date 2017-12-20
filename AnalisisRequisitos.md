@@ -1,7 +1,5 @@
 #Análisis de Requisitos
-
 ##Requisitos Funcionales
-
 -RF1: Juego por turnos para 2 jugadores en red
 -RF2: Existe un tablero de 10x10 para cada jugador. Cada posición del tablero estará representada por coordenadas:
  -Horizontal: letras mayúsculas de izquierda a derecha
