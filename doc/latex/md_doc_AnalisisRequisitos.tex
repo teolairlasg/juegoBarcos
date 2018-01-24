@@ -1,0 +1,48 @@
+\subsection*{Requisitos Funcionales}
+
+
+\begin{DoxyItemize}
+\item R\+F1\+: Juego por turnos para 2 jugadores en red
+\item R\+F2\+: Existe un tablero de 10x10 para cada jugador. Cada posición del tablero estará representada por coordenadas\+:
+\begin{DoxyItemize}
+\item Horizontal\+: letras mayúsculas de izquierda a derecha
+\item Vertical\+: números en sentido descendente
+\end{DoxyItemize}
+\item R\+F3\+: Cada jugador posicionara 5 barcos en horizontal o vertical dentro de su tablero y sin que se solapen. Esta posición se mantendrá hasta el final de la partida.
+\item R\+F4\+: El jugador que tiene el turno enviara unas coordenadas (p.\+e. \+: A-\/3). El programa remoto responderá\+:
+\begin{DoxyItemize}
+\item Agua, si en esa coordenada no tiene
+\item Tocado
+\item Tocado y hundido
+\end{DoxyItemize}
+\item R\+F5\+: El programa tendrá una interfaz de configuración con las siguientes características\+:
+\begin{DoxyItemize}
+\item Se deberá mostrar el tablero vacío a la izquierda con las coordenadas visibles.
+\item Se deberán mostrar los barcos que hay que colocar a la derecha del tablero.
+\item Deberá permitir ir introduciendo los barcos y se actualizará cada vez que introduzcamos un barco.
+\end{DoxyItemize}
+\item R\+F6\+: La introducción de barcos seguirá las siguientes reglas\+:
+\begin{DoxyItemize}
+\item Los barcos deberán situarse dentro de los límites del tablero.
+\item No podrán situarse barcos en casillas contiguas.
+\end{DoxyItemize}
+\item R\+F7\+: La interfaz de juego deberá cumplir\+:
+\begin{DoxyItemize}
+\item Mostrar el tablero propio con los barcos colocados a la izquierda.
+\item Mostrar el tablero enemigo con las casillas reveladas a la derecha.
+\item Cualquier movimiento enemigo deberá ser actualizado en el tablero propio.
+\item Cualquier movimiento propio deberá ser actualizado en el tablero enemigo.
+\end{DoxyItemize}
+\item R\+F8\+: Normas del juego.
+\begin{DoxyItemize}
+\item Una vez posicionados los barcos de acuerdo a las reglas iniciará el juego el primer jugador que haya terminado de definir los barcos.
+\item Los jugadores introducirán unas coordenadas por turnos con los siguientes posibles resultados\+:
+\begin{DoxyItemize}
+\item Agua\+: El jugador no ha acertado la posición de un barco enemigo.
+\item Tocado\+: El jugador ha acertado la posición de un barco enemigo.
+\item Tocado y Hundido\+: El jugador ha acertado la posición de un barco enemigo y lo ha destruido.
+\end{DoxyItemize}
+\item Cuando un jugador consiga un Tocado o un Tocado y Hundido podrá volver a jugar su turno.
+\item El juego finaliza cuando un jugador ha Tocado y Hundido todos los barcos enemigos. 
+\end{DoxyItemize}
+\end{DoxyItemize}

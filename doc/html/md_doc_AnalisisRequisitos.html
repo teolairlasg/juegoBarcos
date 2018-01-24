@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Juego de Barcos: Análisis de Requisitos</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="icon192.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Juego de Barcos
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">Juego de Hundir la flota implementado en C para consola</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li class="current"><a href="pages.html"><span>Páginas&#160;relacionadas</span></a></li>
+      <li><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Análisis de Requisitos </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h2>Requisitos Funcionales</h2>
+<ul>
+<li>RF1: Juego por turnos para 2 jugadores en red</li>
+<li>RF2: Existe un tablero de 10x10 para cada jugador. Cada posición del tablero estará representada por coordenadas:<ul>
+<li>Horizontal: letras mayúsculas de izquierda a derecha</li>
+<li>Vertical: números en sentido descendente</li>
+</ul>
+</li>
+<li>RF3: Cada jugador posicionara 5 barcos en horizontal o vertical dentro de su tablero y sin que se solapen. Esta posición se mantendrá hasta el final de la partida.</li>
+<li>RF4: El jugador que tiene el turno enviara unas coordenadas (p.e. : A-3). El programa remoto responderá:<ul>
+<li>Agua, si en esa coordenada no tiene</li>
+<li>Tocado</li>
+<li>Tocado y hundido</li>
+</ul>
+</li>
+<li>RF5: El programa tendrá una interfaz de configuración con las siguientes características:<ul>
+<li>Se deberá mostrar el tablero vacío a la izquierda con las coordenadas visibles.</li>
+<li>Se deberán mostrar los barcos que hay que colocar a la derecha del tablero.</li>
+<li>Deberá permitir ir introduciendo los barcos y se actualizará cada vez que introduzcamos un barco.</li>
+</ul>
+</li>
+<li>RF6: La introducción de barcos seguirá las siguientes reglas:<ul>
+<li>Los barcos deberán situarse dentro de los límites del tablero.</li>
+<li>No podrán situarse barcos en casillas contiguas.</li>
+</ul>
+</li>
+<li>RF7: La interfaz de juego deberá cumplir:<ul>
+<li>Mostrar el tablero propio con los barcos colocados a la izquierda.</li>
+<li>Mostrar el tablero enemigo con las casillas reveladas a la derecha.</li>
+<li>Cualquier movimiento enemigo deberá ser actualizado en el tablero propio.</li>
+<li>Cualquier movimiento propio deberá ser actualizado en el tablero enemigo.</li>
+</ul>
+</li>
+<li>RF8: Normas del juego.<ul>
+<li>Una vez posicionados los barcos de acuerdo a las reglas iniciará el juego el primer jugador que haya terminado de definir los barcos.</li>
+<li>Los jugadores introducirán unas coordenadas por turnos con los siguientes posibles resultados:<ul>
+<li>Agua: El jugador no ha acertado la posición de un barco enemigo.</li>
+<li>Tocado: El jugador ha acertado la posición de un barco enemigo.</li>
+<li>Tocado y Hundido: El jugador ha acertado la posición de un barco enemigo y lo ha destruido.</li>
+</ul>
+</li>
+<li>Cuando un jugador consiga un Tocado o un Tocado y Hundido podrá volver a jugar su turno.</li>
+<li>El juego finaliza cuando un jugador ha Tocado y Hundido todos los barcos enemigos. </li>
+</ul>
+</li>
+</ul>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

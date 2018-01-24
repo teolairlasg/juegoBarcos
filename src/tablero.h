@@ -1,3 +1,13 @@
+/**
+ * @file
+ * Librería de tablero.
+ *
+ * Esta librería incluye dos métodos para la inicialización
+ * y la impresión por consola del tablero 
+ *
+ * @author Teo
+ */
+
 #ifndef TABLERO_H
 #define TABLERO_H
 
@@ -26,12 +36,17 @@ char tablero[TAM][TAM];
 
 /**
  * Inicializa las posiciones del tablero a agua.
+ *
+ * Inicializa todas las posiciones del tablero a agua, como si estuvieran vacías
  */
+
 void inicializar_tablero();
 
 /**
  * Imprimie por pantalla el estado de un tablero.
- */ 
+ * Imprime el tablero por la consola con diferentes colores para cada estado de la casilla.
+ */
+
 void imprimir_tablero();
 
 #endif

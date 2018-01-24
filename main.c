@@ -1,6 +1,19 @@
+/**
+ * @file
+ */
+
 #include "src/tablero.h"
 
+/**
+ * Método de prueba.
+ *
+ * Inicializa un tablero con agua, cambia el valor de determinadas posiciones y finalmente lo imprime
+ */
+
+
+
 int main (){
+
 
 	inicializar_tablero();
 	tablero[0][0]='B';
