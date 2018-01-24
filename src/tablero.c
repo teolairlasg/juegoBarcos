@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "tablero.h"
+#include "./tablero.h"
 
 void imprimir_linea_superior();
 void imprimir_linea_inferior();

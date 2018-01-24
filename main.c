@@ -1,4 +1,4 @@
-##include <tablero.h>
+#include "src/tablero.h"
 
 int main (){
 
