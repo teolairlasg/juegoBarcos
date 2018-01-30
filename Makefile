@@ -1,10 +1,23 @@
-all: programa
+SOURCES=main.c src/tablero.c
+LIBS=
+TARGET=juegoBarcos
+CC=gcc
+CFLAGS=-Wall
+OBJECTS=$(SOURCES:.c=.o)
+HEADERS=src/tablero.h
 
-tablero.o: ./src/tablero.c ./src/tablero.h
-	gcc -c ./src/tablero.c
+all: $(TARGET)
 
-programa: tablero.o ./main.c
-	gcc tablero.o ./main.c -o programa
+clean:
+	rm -f $(TARGET) $(OBJECTS) .depend
 
-clean: programa
-	rm ./programa ./*.o
+-include .depend
+
+.depend: $(SOURCES) $(HEADERS)
+	gcc -MM $(SOURCES) > .depend
+
+$(TARGET): $(OBJECTS) $(LIBS)
+	$(CC) -o $@ $^
+
+doc: Doxyfile $(SOURCES) $(HEADERS) main.c
+	doxygen
